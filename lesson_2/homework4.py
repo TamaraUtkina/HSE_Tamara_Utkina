@@ -30,7 +30,7 @@ def valid_org_inn(inn):
 sum_1 = 0
 
  for i in range(numbers)):
-    sum_1 += numbers_2[i] * numbers_2[i]
+    sum_1 += numbers_1[i] * numbers_2[i]
 
     control = sum_1 % 11
     
