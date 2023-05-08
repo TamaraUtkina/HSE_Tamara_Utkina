@@ -1,0 +1,27 @@
+class CourtCase:
+    def __init__(self, case_number):
+        self.case_number = case_number
+        self.case_participants = []
+        self.listening_datetimes = []
+        self.is_finished = False
+        self.verdict = ''
+    
+    def set_a_listening_datetime(self, plaintiff, defendant, datetime):
+        listening = {
+          "plaintiff": plaintiff,
+          "defendant": defendant,   
+          "datetime": datetime,
+        }
+        self.listening_datetimes.append(listening)
+
+    def add_participant(self, part_inn):
+        self.case_participants.append(part_inn)
+
+    def remove_participant(self, inn):
+        if inn not in self.case_participants:
+            raise ValueError("incorrect participant")
+        self.case_participants.remove(inn)
+    
+    def make_a_decision(self, verdict):
+        self.verdict = verdict
+        self.is_finished = True
